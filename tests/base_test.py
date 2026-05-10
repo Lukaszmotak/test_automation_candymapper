@@ -11,6 +11,7 @@ class BaseTest(unittest.TestCase):
         self.driver.maximize_window()
         self.driver.get("https://candymapper.com/")
         self.home_page = HomePage(self.driver)
+        self.home_page._verify_page_loaded()
 
 
     def tearDown(self):

@@ -1,10 +1,13 @@
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
 class BasePage:
 
     def __init__(self, driver):
         self.driver = driver
-        self._verify_page()
+        self.wait = WebDriverWait(driver, 10)
 
 
-    def _verify_page(self):
-        #site autotest
-        return
+
+    def verify_page_loaded(self):
+        raise NotImplementedError("Each page must implement verify_page_loaded()")
